@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row bg-main">
+    <div class="col-lg-7 col-md-8 col-sm-12">
+      <nav class="navbar navbar-expand-lg navbar-expand-md">
+        <a class="navbar-brand main-hed" [routerLink]="['/']" >FACEBOOK LITE</a>
+        <button class="navbar-btn d-sm-block d-lg-none d-md-none" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse">
+          <i class="fa fa-bars bar-color" aria-hidden="true"></i>
+        </button>
+        <div class="collapse navbar-collapse " id="nvbCollapse">
+          <ul class="navbar-nav ul-bg">
+            <li class="nav-item pl-1" [ngClass]="{'active': currentState('home')}" >
+              <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active" >
+                Home</a>
+            </li>
+            <li class="nav-item pl-1" [ngClass]="{'active': currentState('videos')}" >
+              <a class="nav-link" [routerLink]="['/videos']" routerLinkActive="router-link-active" >
+                Videos</a>
+            </li>
+            <li class="nav-item pl-1" [ngClass]="{'active': currentState('images')}" >
+              <a class="nav-link" [routerLink]="['/images']" routerLinkActive="router-link-active" >
+                Images</a>
+            </li>
+            <li class="nav-item pl-1" [ngClass]="{'active': currentState('audios')}" >
+              <a class="nav-link" [routerLink]="['/audios']" routerLinkActive="router-link-active" >
+                Audios</a>
+            </li>
+            <li class="nav-item pl-1" [ngClass]="{'active': currentState('friends')}" >
+              <a class="nav-link" [routerLink]="['/friends']" routerLinkActive="router-link-active" >
+                Friends</a>
+            </li>
+            <li class="nav-item pl-1" [ngClass]="{'active': currentState('notification')}" >
+              <a class="nav-link" [routerLink]="['/notification']" routerLinkActive="router-link-active" >
+                Notifications<span> 1</span></a>
+            </li>
+            <li class="nav-item pl-1" [ngClass]="{'active': currentState('max')}" >
+              <a class="nav-link" [routerLink]="['/max']" routerLinkActive="router-link-active" >
+                Max</a>
+            </li>
+            </ul>
+        </div>
+
+      </nav>
+
+    </div>
+    <div class="col-lg-5 col-md-4 col-sm-12 fl-right">
+      <button class="btn btn-bg">Settings</button>
+      <button class="btn btn-bg ml-3">Logout</button>
+
+    </div>
+
+  </div>
+</div>
