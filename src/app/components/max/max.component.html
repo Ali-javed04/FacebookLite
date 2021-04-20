@@ -1,1 +1,90 @@
-<p>max works!</p>
+<div class="container-fluid">
+  <!-- data read only form  -->
+  <div class="row bg-color pt-4 pb-4" *ngIf="divDisplay == 0">
+    <div class="container mt-4 mb-4 bg-color1">
+      <div class="row main-row">
+        <h1 class="mt-4 bg-text">Profile</h1>
+      </div>
+      <div class="row pl-4 mt-4">
+        <button class="btn btn-edit" (click)="editData()">Edit</button>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-2 img-div">
+          <img [src]="url ? url:'/assets/profile1.png'" alt=""  class="profile-img">
+        </div>
+        <div class="col-md-3 pt-4">
+          <h3 class="mt-4 bg-text">{{name}}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <p class="ml-4 mt-4 mb-4 bg-email">{{email}}</p>
+      </div>
+      <div class="row mt-4 mb-4">
+
+        <div class="col-md-3">
+          <a href="{{facebook}}"><i class="fa fa-facebook-official icon-bg" aria-hidden="true"></i></a>
+          <a href="{{twitter}}"><i class="fa fa-twitter-square icon-bg" aria-hidden="true"></i></a>
+          <a href="{{instragram}}"><i class="fa fa-instagram icon-bg" aria-hidden="true"></i></a>
+          <a href="{{linkedIn}}"><i class="fa fa-linkedin-square icon-bg" aria-hidden="true"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- data Editable Form  -->
+  <div class="row bg-color pt-4 pb-4" *ngIf="divDisplay == 1">
+    <div class="container mt-4 mb-4 bg-color1">
+      <div class="row">
+        <h1 class="mt-4 ml-4 bg-text">Profile</h1>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-2">
+          <div class="img-div">
+            <img [src]="url ? url:'/assets/profile1.png'" alt=""  class="profile-img">
+          </div>
+          <input type="file" (change)="selectFile($event)" class="ml-4  mt-4">
+
+        </div>
+        <div class="col-md-3 pt-4">
+          <h3 class="mt-4 bg-text">{{name}}</h3>
+        </div>
+        <div class="col-md-6">
+          <label class="bg-text">Enter Your Name:</label>
+          <input type="text" class="form-control" [(ngModel)]="name">
+          <label class="bg-text" >Enter Your Email:</label>
+          <input type="email" class="form-control" [(ngModel)]="email">
+        </div>
+      </div>
+      <div class="row mt-4">
+        <p class="ml-4 mt-4 mb-4 bg-email">{{email}}</p>
+      </div>
+      <div class="row mt-4 mb-4">
+        <div class="col-md-6">
+          <label class="bg-text">Enter Your Facebook Url</label>
+          <input type="text" placeholder="Enter your Facebook Url" class="form-control" [(ngModel)]="facebook">
+
+        </div>
+        <div class="col-md-6">
+          <label class="bg-text">Enter Your Twitter Url</label>
+          <input type="text" placeholder="Enter your Twitter Url" class="form-control" [(ngModel)]="twitter">
+        </div>
+      </div>
+      <div class="row mt-4 mb-4">
+        <div class="col-md-6">
+          <label class="bg-text">Enter Your Instragram Url</label>
+          <input type="text" placeholder="Enter your Instragram Url" class="form-control" [(ngModel)]="instragram">
+        </div>
+        <div class="col-md-6">
+          <label class="bg-text">Enter Your LinkedIn Url</label>
+          <input type="text" placeholder="Enter your LinkedIn Url" class="form-control" [(ngModel)]="linkedIn">
+        </div>
+      </div>
+      <div class="row save-div mt-4 mb-4">
+        <button class="btn btn-edit" (click)="saveData()">Save</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
